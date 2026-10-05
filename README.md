@@ -9,30 +9,31 @@ This lab reviews the foundational concepts of algorithms and data structures tha
 ## Asymptotic Analysis
 
 1. Use the rules from lecture 07 to prove that $T(n) = 5 \log n + 7n$ is $\mathcal{O}(n)$.
+- Using the dropping constant and summing the max rule O(n) grows faster then $\log(n)$ we can say it grows faster to $\mathcal{O}(n)$., overall it is $\mathcal{O}(n)$.
 
 2. True/False/Possibly: $T(n)$ is $\mathcal{O}(n^2)$?
 
 **Answer**: Yes
 
-**Justification**:
+**Justification**:Yes it is true. Since, polynomial degree grows faster we can say $\mathcal{O}(n)$ can be $\mathcal{O}(n^2)$
 
 3. True/False/Possibly: $T(n)$ is $\Omega(n \log n)$?
 
 **Answer**: No
 
-**Justification**:
+**Justification**: No because for lower bound it can't be greater then upper bound which is $\mathcal{O}(n)$.
 
 4. For any algorithm, we can give a trivial lower bound. What is that lower bound?
 
 **Answer**: $\Omega(1)$
 
-**Justification**:
+**Justification**: It is  $\Omega(1)$ because it can't be lower than that any program has something to do so it atleast has $\Omega(1)$
 
 5. Is there a corresponding trivial upper bound? Why or why not?
 
 **Answer**: No
 
-**Justification**:
+**Justification**: No because it can go infinitely upper bound so there is no max upper bound.
 
 
 ## Data Structures
@@ -109,6 +110,8 @@ for i = 1 to N do
 ```
 
 Write a closed-form expression for the number of times `do_work()` is called in terms of $N$.
+- do_work() number of calls is: `N+ N-1 + N-2 + ....+1` which is the sum of the first \(N\) positive integers: do_work() is called exactly `[N(N+1)]/2`
+
 
 2. Analyze the exact number of times the `do_work()` function is called in the following pseudocode, assuming $N \ge 1$.
 
@@ -124,7 +127,8 @@ If $N=16$, how many times is `do_work()` called?
 
 **Answer**: 31
 
-**Justification**:
+**Justification**: It's 31 because when you run the loop the 16 gets divided by i/2 which is 8, then i is 8 then again it is divided by 2 which is 4, it goes on till i is 1.
+`16+8+4+2+1 = 31`
 
 ## Greedy Algorithms
 
